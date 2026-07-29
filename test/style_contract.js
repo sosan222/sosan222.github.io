@@ -61,9 +61,45 @@ if (/gem 'al_math',\s*:git =>/.test(gemfile)) {
   failures.push("`Gemfile` must not use git-branch pin for `al_math`; use released gem version.");
 }
 
+// A downstream personal site (this repo) may legally shadow gem-owned paths
+// as a local override -- see docs/ARCHITECTURE.md#local-overrides-your-site-vs-this-repo.
+// Each shadowed file must be tracked and acknowledged in .al-folio-overrides.yml
+// (via `bundle exec al-folio upgrade overrides accept <path>`); anything else
+// under these paths is still flagged as unowned starter drift.
+const overridesFile = ".al-folio-overrides.yml";
+const acknowledgedOverrides = new Set();
+if (exists(overridesFile)) {
+  const overridesContent = read(overridesFile);
+  const overridesSection = overridesContent.split(/^overrides:\s*$/m)[1] || "";
+  const entryRegex = /^ {2}([^\s:][^:]*):\s*$/gm;
+  let match;
+  while ((match = entryRegex.exec(overridesSection)) !== null) {
+    const blockStart = match.index + match[0].length;
+    const rest = overridesSection.slice(blockStart);
+    const nextEntry = rest.match(/^ {2}[^\s:][^:]*:\s*$/m);
+    const block = nextEntry ? rest.slice(0, nextEntry.index) : rest;
+    if (/acknowledged_at:\s*\S/.test(block)) {
+      acknowledgedOverrides.add(match[1]);
+    }
+  }
+}
+
+const listFilesRecursive = (relPath) => {
+  const abs = path.join(root, relPath);
+  if (!fs.statSync(abs).isDirectory()) return [relPath];
+  return fs
+    .readdirSync(abs, { recursive: true })
+    .map((entry) => path.join(relPath, entry).split(path.sep).join("/"))
+    .filter((entry) => fs.statSync(path.join(root, entry)).isFile());
+};
+
 for (const forbiddenPath of ["_includes", "_layouts", "_sass", "_scripts", "assets/tailwind", "tailwind.config.js", "assets/webfonts"]) {
-  if (exists(forbiddenPath)) {
-    failures.push(`Starter must not own core component path \`${forbiddenPath}\`; move ownership to the corresponding gem.`);
+  if (!exists(forbiddenPath)) continue;
+  const unacknowledged = listFilesRecursive(forbiddenPath).filter((file) => !acknowledgedOverrides.has(file));
+  if (unacknowledged.length > 0) {
+    failures.push(
+      `Starter must not own core component path \`${forbiddenPath}\` unless every file is an acknowledged override in \`.al-folio-overrides.yml\`. Unacknowledged: ${unacknowledged.join(", ")}.`
+    );
   }
 }
 

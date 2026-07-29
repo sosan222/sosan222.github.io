@@ -7,39 +7,39 @@ overrides:
     upstream_path: _sass/_navbar.scss
     upstream_sha256: 6bf33c8e61fbf49cd3e6ad878f435b90a5acbd2b508587981063a33a1b681029
     local_sha256: e1045b70f524d32e506b447def3e48b6ab5798318c18d89245f09cc2452c370c
-    acknowledged_at: '2026-07-29'
+    acknowledged_at: "2026-07-29"
   _sass/_publications.scss:
     owner: al_folio_core
     gem_version: 1.0.11
     upstream_path: _sass/_publications.scss
     upstream_sha256: 646fec8d5d650160708cae15eaff9f4dee1dc9f7214fef50b898ef574b243fc8
     local_sha256: 1eea00ba29fd690f6d94e0403afc489ef5ab2839e47acf0ce0c1af8cebb4fe9a
-    acknowledged_at: '2026-07-29'
+    acknowledged_at: "2026-07-29"
   _sass/_themes.scss:
     owner: al_folio_core
     gem_version: 1.0.11
     upstream_path: _sass/_themes.scss
     upstream_sha256: b581e43dcfbf21c14f388e2b585474c886fad62f6b5a0444f7832e7f69745f1f
     local_sha256: 6b158623e951fdfabf3ee540b6d51c9db8f79a675c836103ea63a44af99c6e18
-    acknowledged_at: '2026-07-29'
+    acknowledged_at: "2026-07-29"
   _sass/_typography.scss:
     owner: al_folio_core
     gem_version: 1.0.11
     upstream_path: _sass/_typography.scss
     upstream_sha256: 60a42f389e7b7f4166a5e10d326458a7d896a8a94d1b2f27f50cd5f1f5131cc5
     local_sha256: 86223d0bd515ef7d53435174905736d8959eda149a872766394f3a64de5adfd4
-    acknowledged_at: '2026-07-29'
+    acknowledged_at: "2026-07-29"
   _sass/_variables.scss:
     owner: al_folio_core
     gem_version: 1.0.11
     upstream_path: _sass/_variables.scss
     upstream_sha256: 8a6b3e6a2dfcda6c7973dc7b19872f02d66d6c78bac677fc2dff0e272b3ebc84
     local_sha256: b89b5ebcf7d070f35e43fe09e2f885af57baa789f2f1169a59d3279018e4f13a
-    acknowledged_at: '2026-07-29'
+    acknowledged_at: "2026-07-29"
   assets/js/theme.js:
     owner: al_folio_core
     gem_version: 1.0.11
     upstream_path: assets/js/theme.js
     upstream_sha256: 404c3e26402451496cffea06946c5dd061c76c8512328bfdcbe2c3572052855e
     local_sha256: cfb7bcecc734625a62a4014e8ebaf4484e0ba804ca8df1782cacd9d65d67004c
-    acknowledged_at: '2026-07-29'
+    acknowledged_at: "2026-07-29"

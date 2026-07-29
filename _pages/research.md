@@ -22,8 +22,8 @@ Randomness is an intrinsic feature of many real-world systems and decision probl
 
 My applied expertise spans healthcare analytics, transportation, logistics, and quantitative finance. Specific topics addressed in my current and past research include:
 
-- Routing and Scheduling 
-- Facility Location 
-- Operating Room Scheduling 
+- Routing and Scheduling
+- Facility Location
+- Operating Room Scheduling
 - Humanitarian Logistics
-- Portfolio Optimization 
+- Portfolio Optimization

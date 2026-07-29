@@ -6,8 +6,7 @@ nav: true
 nav_order: 4
 ---
 
-### Conference Presentations
-{: .talks-heading}
+<h3 class="talks-heading">Conference Presentations</h3>
 
 1. "Stochastic optimization under implicit uncertainty." <em class="talk-venue">2026 INFORMS Annual Meeting</em>, San Francisco, CA, November 2026.
 
