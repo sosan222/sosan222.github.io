@@ -6,7 +6,7 @@ subtitle: Assistant Professor, Department of Industrial, Manufacturing, and Syst
 
 profile:
   align: right
-  image: prof_pic.jpg          # replace with your headshot in assets/img/
+  image: personal_pic.jpg          # replace with your headshot in assets/img/
   image_circular: false
   more_info: >
     <p>IMSE 227</p>
