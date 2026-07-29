@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /materials/
-title: materials
+title: Materials
 nav: true
 nav_order: 6
 ---

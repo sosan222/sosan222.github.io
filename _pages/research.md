@@ -1,27 +1,29 @@
 ---
 layout: page
 permalink: /research/
-title: research
+title: Research Interests
 nav: true
 nav_order: 2
 ---
 
-### Research Interests
-
 **Theory**
+{: .research-topic}
 
-Randomness exists inherently in many real-world applications, and how we model uncertainty in optimization is the core of my research. In terms of general theories, below are some of the topics I am interested in.
+Randomness is an intrinsic feature of many real-world systems and decision problems. Consequently, modeling uncertainty in optimization to improve decision-making forms the core of my research. From a broader theoretical perspective, my interests span the following areas:
 
-- Stochastic Programming
+- Data-Driven Stochastic Optimization
 - (Distributionally) Robust Optimization
 - Decomposition Algorithms
 - Machine Learning and Statistical Modeling
-- Convex Analysis
+- AI-Enhanced Decision-Making
 
-**Application**
+**Applications**
+{: .research-topic}
 
-My primary application areas and expertise are in healthcare analytics, transportation, logistics, and quantitative finance. Below are some of the topics related to my current and previous research.
+My applied expertise spans healthcare analytics, transportation, logistics, and quantitative finance. Specific topics addressed in my current and past research include:
 
-- Routing and Scheduling Problem
-- Operating Room Scheduling Problem
-- Portfolio Optimization Problem
+- Routing and Scheduling 
+- Facility Location 
+- Operating Room Scheduling 
+- Humanitarian Logistics
+- Portfolio Optimization 

@@ -1,0 +1,185 @@
+/*******************************************************************************
+ * Typography styles: Headings, text, links, tables, blockquotes
+ *
+ * Local override of al_folio_core's _sass/_typography.scss.
+ * Added a distinct font-family for the about-page subtitle (.desc), a
+ * larger, theme-colored style for the research-page section labels
+ * (.research-topic, e.g. "Theory" / "Application"), blue/orange accents
+ * for the talks page (.talks-heading, .talk-venue), and blue/orange
+ * accents for the teaching page (.teaching-university, .teaching-role).
+ * In dark mode, .research-topic strong, .talk-venue, and
+ * .teaching-university switch to light pink (matching the publications
+ * page's dark-mode year color) instead of the theme/orange colors.
+ ******************************************************************************/
+
+@use "variables" as v;
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+em,
+div,
+li,
+span,
+strong {
+  color: var(--global-text-color);
+}
+
+.desc {
+  font-family: "Roboto Slab", serif;
+}
+
+.research-topic {
+  font-size: 1.5rem;
+
+  strong {
+    color: var(--global-theme-color);
+  }
+}
+
+.talks-heading {
+  color: var(--global-theme-color);
+}
+
+.talk-venue {
+  color: #d36d00;
+}
+
+.teaching-university {
+  color: var(--global-theme-color);
+}
+
+.teaching-role {
+  strong {
+    color: #d36d00;
+  }
+}
+
+html[data-theme="dark"] {
+  .research-topic strong,
+  .talk-venue,
+  .teaching-university {
+    color: #ffb6c1;
+  }
+}
+
+hr {
+  border-top: 1px solid var(--global-divider-color);
+}
+
+table:not(.table) {
+  td,
+  th {
+    font-size: 1rem;
+    padding: 0.45rem 1rem 0.45rem 0;
+    border-top: 1px solid var(--global-divider-color);
+  }
+
+  th {
+    font-weight: 600;
+  }
+}
+
+a,
+table.table a {
+  color: var(--global-theme-color);
+
+  &:hover {
+    color: var(--global-theme-color);
+    text-decoration: underline;
+  }
+
+  &:hover:after :not(.nav-item.dropdown) {
+    width: 100%;
+  }
+}
+
+.table-dark {
+  background-color: transparent;
+  &.table-bordered {
+    border: 1px solid var(--global-divider-color) !important;
+  }
+}
+
+blockquote {
+  background: var(--global-bg-color);
+  border-left: 5px solid var(--global-theme-color);
+  margin: 1.5em 0;
+  padding: 1em;
+  font-size: 1.2rem;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  /* Tips, warnings, and dangers blockquotes */
+  &.block-tip {
+    border-color: var(--global-tip-block);
+    background-color: var(--global-tip-block-bg);
+
+    em,
+    li,
+    p,
+    strong {
+      color: var(--global-tip-block-text);
+    }
+
+    a,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--global-tip-block-title);
+    }
+  }
+
+  &.block-warning {
+    border-color: var(--global-warning-block);
+    background-color: var(--global-warning-block-bg);
+
+    em,
+    li,
+    p,
+    strong {
+      color: var(--global-warning-block-text);
+    }
+
+    a,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--global-warning-block-title);
+    }
+  }
+
+  &.block-danger {
+    border-color: var(--global-danger-block);
+    background-color: var(--global-danger-block-bg);
+
+    em,
+    li,
+    p,
+    strong {
+      color: var(--global-danger-block-text);
+    }
+
+    a,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--global-danger-block-title);
+    }
+  }
+}
