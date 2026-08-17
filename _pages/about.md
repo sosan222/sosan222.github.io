@@ -8,9 +8,6 @@ profile:
   align: right
   image: personal_pic.jpg # replace with your headshot in assets/img/
   image_circular: false
-  more_info: >
-    <p>IMSE 227, 905 Canton Ave</p>
-    <p>Lubbock, TX 79409</p>
 
 selected_papers: false
 social: true # shows social icons (set up in _data/socials.yml, see note below)
