@@ -5,10 +5,20 @@ tmp_dir="$(mktemp -d)"
 tmp_override="${tmp_dir}/distill-override.yml"
 tmp_site="${tmp_dir}/site"
 
+# This repo intentionally keeps no demo blog posts, so the distill layout has
+# nothing to render against by default. Drop a throwaway fixture post into
+# _posts/ for the duration of this build only, so the check below exercises
+# real end-to-end rendering rather than trusting site content that may not
+# exist. It is never committed.
+fixture_post="_posts/2021-05-22-distill-integration-test-fixture.md"
+
 cleanup() {
   rm -rf "${tmp_dir}"
+  rm -f "${fixture_post}"
 }
 trap cleanup EXIT
+
+cp test/fixtures/distill-post.md "${fixture_post}"
 
 cat >"${tmp_override}" <<'YAML'
 giscus:
@@ -20,7 +30,7 @@ YAML
 
 bundle exec jekyll build --config "_config.yml,${tmp_override}" -d "${tmp_site}" >/dev/null
 
-distill_page="${tmp_site}/blog/2021/distill/index.html"
+distill_page="${tmp_site}/blog/2021/distill-integration-test-fixture/index.html"
 
 if [ ! -f "${distill_page}" ]; then
   echo "distill page was not generated at ${distill_page}" >&2
